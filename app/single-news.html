@@ -26,21 +26,23 @@
 		<ul class="nav grid">
 			<li class="nav__item"><a href="/about.html" class="nav__url">Сведения об образовательной организации</a></li>
 			<li class="nav__item"><a href="/vacancy.html" class="nav__url">Вакансии</a></li>
-			<li class="nav__item"><a href="/news.html" class="nav__url active">Новости</a></li>
+			<li class="nav__item"><a href="/news.html" class="nav__url">Новости</a></li>
 		</ul>
-		<div class="geo-box">
+		<div class="geo-box grid">
+			<i class="icon-geo geo-box__icon"></i>
 			<p class="geo-box__text text--sb">Екатеринбург,</p>
 			<p class="geo-box__text">Новгородцевой, 11А</p>
 		</div>
-		<div class="phone-box">
+		<div class="phone-box grid">
+			<i class="icon-phone phone-box__icon"></i>
 			<a href="tel:+7 (343) 347-68-67" class="phone-box__tel text--sb">+7 (343) 347-68-67</a>
 			<p class="phone-box__text">с 9:00 до 19:00</p>
 		</div>
 		<a href="#" class="eye"><img src="img/eye.svg" alt="" class="eye__img img-responsive"></a>
-	</header> 
+	</header>
 	<section class="breadcrumbs">
 		<div class="container">
-			<a href="/" class="breadcrumbs__url">Последние новости</a> 
+			<a href="/news.html" class="breadcrumbs__url"><i class="icon-arrow-back breadcrumbs__icon"></i> Последние новости</a> 
 		</div>
 	</section>
 		<section class="single-news bg-wave ">
@@ -48,9 +50,29 @@
 				<h2 class="section-title single-news__title">Ученики «Индры» выиграли соревнования по шахматам</h2>
 				<p class="single-news__date">7 июня 2020</p>
 				<div class="single-news__inner grid">
-					<div class="single-news__img-box">
-						<img src="img/about.png" alt="" class="single-news__img img-responsive">
+					<div class="single-news__wrap ">
+						<div class="single-news__slider-big">
+							<a data-fancybox="slide" href="img/about.png" class="single-news__img-box-big">
+								<img src="img/about.png" alt="" class="single-news__img-big img-responsive">
+							</a> 
+						</div> 
+						<!-- <div class="single-news__slider-big-pagination"></div> -->
+						<div class="single-news__slider-nav grid">
+							<a data-fancybox="slide" href="img/about.png" class="single-news__img-box-nav">
+								<img src="img/about.png" alt="" class="single-news__img-nav  img-responsive">
+							</a>
+							<a data-fancybox="slide" href="img/about.png" class="single-news__img-box-nav">
+								<img src="img/about.png" alt="" class="single-news__img-nav  img-responsive">
+							</a>
+							<a data-fancybox="slide" href="img/about.png" class="single-news__img-box-nav">
+								<img src="img/about.png" alt="" class="single-news__img-nav  img-responsive">
+							</a> 
+							<a data-fancybox="slide" href="img/about.png" class="single-news__img-box-nav">
+								<img src="img/about.png" alt="" class="single-news__img-nav  img-responsive">
+							</a> 
+						</div>
 					</div>
+					  
 					<div class="single-news__text-box">
 						<p class="single-news__text">Nenatis amet facilisi sapien odio in elit eget. Lorem morbi pellentesque eget tincidunt platea turpis morbi ipsum. Etiam fames arcu auctor nisl, habitant feugiat justo. Ipsum nec urna, cursus mi pellentesque in. Tortor pulvinar amet sem interdum egestas. Semper ut fermentum consequat mauris vitae quisque ornare tortor mauris.</p>
 						<p class="single-news__text">In ullamcorper cras aenean velit libero dui, integer. Nascetur pharetra dictumst morbi vestibulum, accumsan. Faucibus nunc nulla id gravida turpis tincidunt et in vestibulum. Etiam sed vulputate in tristique. Mauris in feugiat turpis vestibulum, senectus laoreet integer tellus vestibulum</p>
@@ -67,56 +89,56 @@
 						<img src="img/about.png" alt="" class="news-small__img img-responsive">
 					</div>
 					<div class="news-small__text-box">
-						<p class="news-small__title">Обучение в дистанционном режиме</p>
+						<p class="news-small__title">Приказ о переходе на обучение с помощью дистанционных технологий</p>
 						<p class="news-small__date">17 апреля 2020</p>
 					</div>
-					<a href="/single-news.html" class="news-small__link">Читать подробнее</a>
+					<a href="/single-news.html" class="news-small__link">Читать подробнее <i class="icon-arrow-right news-arrow"></i></a>
 				</div>
 				<div class="news-small grid">
 					<div class="news-small__img-box">
 						<img src="img/about.png" alt="" class="news-small__img img-responsive">
 					</div>
 					<div class="news-small__text-box">
-						<p class="news-small__title">Обучение в дистанционном режиме</p>
+						<p class="news-small__title">Приказ о переходе на обучение с помощью дистанционных технологий</p>
 						<p class="news-small__date">17 апреля 2020</p>
 					</div>
-					<a href="/single-news.html" class="news-small__link">Читать подробнее</a>
+					<a href="/single-news.html" class="news-small__link">Читать подробнее <i class="icon-arrow-right news-arrow"></i></a>
 				</div>
 				<div class="news-small grid">
 					<div class="news-small__img-box">
 						<img src="img/about.png" alt="" class="news-small__img img-responsive">
 					</div>
 					<div class="news-small__text-box">
-						<p class="news-small__title">Обучение в дистанционном режиме</p>
+						<p class="news-small__title">Приказ о переходе на обучение с помощью дистанционных технологий</p>
 						<p class="news-small__date">17 апреля 2020</p>
 					</div>
-					<a href="/single-news.html" class="news-small__link">Читать подробнее</a>
+					<a href="/single-news.html" class="news-small__link">Читать подробнее <i class="icon-arrow-right news-arrow"></i></a>
 				</div>
 				<div class="news-small grid">
 					<div class="news-small__img-box">
 						<img src="img/about.png" alt="" class="news-small__img img-responsive">
 					</div>
 					<div class="news-small__text-box">
-						<p class="news-small__title">Обучение в дистанционном режиме</p>
+						<p class="news-small__title">Приказ о переходе на обучение с помощью дистанционных технологий</p>
 						<p class="news-small__date">17 апреля 2020</p>
 					</div>
-					<a href="/single-news.html" class="news-small__link">Читать подробнее</a>
+					<a href="/single-news.html" class="news-small__link">Читать подробнее <i class="icon-arrow-right news-arrow"></i></a>
 				</div>
 				<div class="news-small grid">
 					<div class="news-small__img-box">
 						<img src="img/about.png" alt="" class="news-small__img img-responsive">
 					</div>
 					<div class="news-small__text-box">
-						<p class="news-small__title">Обучение в дистанционном режиме</p>
+						<p class="news-small__title">Приказ о переходе на обучение с помощью дистанционных технологий</p>
 						<p class="news-small__date">17 апреля 2020</p>
 					</div>
-					<a href="/single-news.html" class="news-small__link">Читать подробнее</a>
+					<a href="/single-news.html" class="news-small__link">Читать подробнее <i class="icon-arrow-right news-arrow"></i></a>
 				</div>
 			</div>
 			</section>
 		<div class="pagination news__pagination">
 			<ul class="pagination__list">
-					<i class="pagination__btn pagination__btn_prev icon ion-ios-arrow-back"></i>
+					<i class=" pagination__btn--prev icon-arrow-left"></i>
 					<li class="pagination__item">
 							<a href="#" class="pagination__link pagination__link--active">1</a>
 					</li>
@@ -132,7 +154,7 @@
 					<li class="pagination__item">
 							<a href="#" class="pagination__link">99</a>
 					</li>
-					<i class="pagination__btn pagination__btn_next icon ion-ios-arrow-forward"></i>
+					<i class="  pagination__btn--next icon-arrow-right"></i>
 			</ul>
 			<a href="/" class="pagination__btn">На главную</a>
 		</div>

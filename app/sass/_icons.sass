@@ -1,0 +1,175 @@
+@font-face
+    font-family: "Icons"
+    src: url('../fonts/Icons.eot')
+    src: url('../fonts/Icons.eot?#iefix') format('eot'), url('../fonts/Icons.woff') format('woff'), url('../fonts/Icons.ttf') format('truetype'), url('../fonts/Icons.svg#Icons') format('svg')
+
+@mixin icon-styles
+    font-family: "Icons"
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    font-style: normal
+    font-variant: normal
+    font-weight: normal
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none
+    text-transform: none
+
+
+%icon
+    +icon-styles
+
+@function icon-char($filename)
+    $char: ""
+
+    @if $filename == arrow-back
+        $char: "\E001"
+    
+    @if $filename == arrow-down
+        $char: "\E002"
+    
+    @if $filename == arrow-left-circle-color
+        $char: "\E003"
+    
+    @if $filename == arrow-left-circle
+        $char: "\E004"
+    
+    @if $filename == arrow-left
+        $char: "\E005"
+    
+    @if $filename == arrow-right-circle-color
+        $char: "\E006"
+    
+    @if $filename == arrow-right-circle
+        $char: "\E007"
+    
+    @if $filename == arrow-right
+        $char: "\E008"
+    
+    @if $filename == arrow-slider-left
+        $char: "\E009"
+    
+    @if $filename == arrow-slider-right
+        $char: "\E00A"
+    
+    @if $filename == certificate
+        $char: "\E00B"
+    
+    @if $filename == circle-green
+        $char: "\E00C"
+    
+    @if $filename == clock
+        $char: "\E00D"
+    
+    @if $filename == eye
+        $char: "\E00E"
+    
+    @if $filename == food
+        $char: "\E00F"
+    
+    @if $filename == geo
+        $char: "\E010"
+    
+    @if $filename == inst
+        $char: "\E011"
+    
+    @if $filename == map
+        $char: "\E012"
+    
+    @if $filename == minus
+        $char: "\E013"
+    
+    @if $filename == news
+        $char: "\E014"
+    
+    @if $filename == people
+        $char: "\E015"
+    
+    @if $filename == phone
+        $char: "\E016"
+    
+    @if $filename == plus
+        $char: "\E017"
+    
+    @if $filename == recomend
+        $char: "\E018"
+    
+    @if $filename == utube
+        $char: "\E019"
+    
+    @if $filename == vk
+        $char: "\E01A"
+    
+    @if $filename == wave-bg
+        $char: "\E01B"
+    
+    @if $filename == write
+        $char: "\E01C"
+    
+    @return $char
+
+
+@mixin icon($filename, $insert: before, $extend: true)
+    &:#{$insert}
+        @if $extend
+            @extend %icon
+        @else
+            +icon-styles
+        
+        content: icon-char($filename)
+
+.icon-arrow-back
+    +icon(arrow-back)
+.icon-arrow-down
+    +icon(arrow-down)
+.icon-arrow-left-circle-color
+    +icon(arrow-left-circle-color)
+.icon-arrow-left-circle
+    +icon(arrow-left-circle)
+.icon-arrow-left
+    +icon(arrow-left)
+.icon-arrow-right-circle-color
+    +icon(arrow-right-circle-color)
+.icon-arrow-right-circle
+    +icon(arrow-right-circle)
+.icon-arrow-right
+    +icon(arrow-right)
+.icon-arrow-slider-left
+    +icon(arrow-slider-left)
+.icon-arrow-slider-right
+    +icon(arrow-slider-right)
+.icon-certificate
+    +icon(certificate)
+.icon-circle-green
+    +icon(circle-green)
+.icon-clock
+    +icon(clock)
+.icon-eye
+    +icon(eye)
+.icon-food
+    +icon(food)
+.icon-geo
+    +icon(geo)
+.icon-inst
+    +icon(inst)
+.icon-map
+    +icon(map)
+.icon-minus
+    +icon(minus)
+.icon-news
+    +icon(news)
+.icon-people
+    +icon(people)
+.icon-phone
+    +icon(phone)
+.icon-plus
+    +icon(plus)
+.icon-recomend
+    +icon(recomend)
+.icon-utube
+    +icon(utube)
+.icon-vk
+    +icon(vk)
+.icon-wave-bg
+    +icon(wave-bg)
+.icon-write
+    +icon(write)
