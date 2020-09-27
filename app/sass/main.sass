@@ -14,11 +14,18 @@
   border-radius: em(8px)
   display: block
   max-width: max-content
+  height: max-content
+  font-family: $P
+  font-weight: 600
   &--orange
     background: $orangeGrad
 .text
   &--sb
     font-weight: 600
+  &--orange
+    background: $orangeGrad
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 .header
   padding: 18px 50px
   grid-template-columns: max-content  1fr max-content max-content max-content
@@ -131,6 +138,7 @@
   line-height: 1.2
   margin: 0 0 1em
   max-width: max-content
+
 .bg-wave
   // position: relative
   // background-color: #fff
@@ -144,6 +152,7 @@
     height: 50%
     width: 100%
     z-index: -2
+
 .banner
   padding: 100px 0 100px 50px
   background-color: #efefef
@@ -156,6 +165,7 @@
     max-width: 430px
     font-size: em(40px)
     margin: 0 0 em(14px)
+    line-height: 1.2
   &__subtitle
     font-size: em(18px)
     margin: 0 0 em(46px)
@@ -171,7 +181,8 @@
       top: 50%
       transform: translateY(-50%)
   &__btn
-    margin-bottom: em(64px)
+    margin: 0 em(60px) em(64px) 0
+    display: inline-block
   &__img
     position: absolute
     right: 0
@@ -216,16 +227,27 @@
     padding: 30px 50px
     box-shadow: 20px 20px 35px rgba(143, 146, 158, 0.1)
     z-index: 11
+    width: 1075px
+  &__more
+    text-decoration: none
+    color: $dark
+    display: inline-block
+    font-family: $P
+    font-size: em(18px)
+    font-weight: 600
 .under-list
   margin: 0
   padding: 0
+  grid-template-columns: repeat(5, 1fr)
+  grid-column-gap: 70px
   &__item
     display: inline-block
-    margin-right: 70px
+    // margin-right: 70px
     &:last-child
       margin: 0
   &__text
     margin: 0 0 em(10px)
+
 .categories
   padding: 50px 0 0
   &--main-page
@@ -317,17 +339,18 @@
     line-height: 1.5
     margin: 0
     max-width: max-content
-    background: $orangeGrad
-    -webkit-background-clip: text
-    -webkit-text-fill-color: transparent
+
   &__short-text
     margin: 0
     font-size: em(14px)
     font-weight: 600
   &--kindergarten
-    padding: 90px
+    padding: 90px 0 30px
     >div
       grid-template-columns: 1fr max-content
+  &__btn
+    padding: em(13px) em(45px)
+
 .news
   padding: 40px 0
   >div
@@ -520,4 +543,225 @@
     font-weight: 700
     font-size: em(24px)
     margin: 0 0 em(20px)
+.program
+  padding: 40px 55px
+  >div
+    grid-template-columns: 1fr 1fr 1fr
+    grid-column-gap: 40px
+  &__title
+    margin: 0 0 em(5px)
+    grid-column: 1/4
+  &__subtitle
+    grid-column: 1/4
+    font-family: $P
+    font-weight: 600
+    line-height: 1.65
+    margin: 0 0 em(40px)
+.list
+  list-style: none
+  // padding: 0
+  margin: 0
+  &__item
+    margin: 0 0 em(25px)
+    line-height: 1.65s
+    position: relative
+    &::before
+      content: ''
+      background: url('../img/circle-green.svg')
+      width: 24px
+      height: 24px
+      left: -40px
+      position: absolute
+.link
+  color: $orange
+  text-decoration: none
+  font-weight: 600
+
+.bg-lblue
+  background-color: $lBlue
+
+.teachers
+  padding: 42px 50px
+  &__title
+    margin-bottom: em(20px)
+    line-height: 1.4
+  &__btn
+
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+.slider-teacher
+  margin: auto
+  // max-width: 1115px
+  padding: 0 20px
+  &__card
+    max-width: 253px
+  &__img-box
+    height: 266px
+    max-width: 253px
+    border-radius: 10px
+    overflow: hidden
+    margin-bottom: 30px
+  &__img
+    object-fit: cover
+  &__name
+    font-family: $P
+    font-weight: 700
+    font-size: em(20px)
+    line-height: 1.2
+    margin: 0
+  &__info
+    font-size: em(14px)
+    margin: em(12px) 0 em(38px)
+  &__wrap
+    margin: auto
+    max-width: 1070px
+    padding: 0 20px
+    // overflow: hidden
+  &__pag
+    height: 7px !important
+    background-color: #F2F3F7
+    top: auto !important
+    bottom: 0
+    span
+      background: $greenGrad !important
+  &__prev
+    width: 57px
+    height: 57px
+    top: 30%
+    // left: -20px
+    // position: absolute
+    // z-index: 11111111111
+    &:after
+      width: 57px
+      height: 57px
+      content: ''
+      background: url('../img/arrow-left-circle-color.svg')
+    &.swiper-button-disabled
+      &:after
+        background: url('../img/arrow-left-circle.svg')
+  &__next
+    width: 57px
+    height: 57px
+    top: 30%
+    // left: -60px
+    &:after
+      width: 57px
+      height: 57px
+      content: ''
+      background: url('../img/arrow-right-circle-color.svg')
+    &.swiper-button-disabled
+      &:after
+        background: url('../img/arrow-right-circle.svg')
+
+.events
+  padding: 60px 50px
+  >div
+    grid-template-columns: repeat(3, 1fr)
+    grid-column-gap: 20px
+  &__title
+    grid-column: 1/4
+    margin: 0 0 em(20px)
+  &__more-btn
+    margin: 0 auto
+    display: block
+    max-width: max-content
+    grid-column: 1/4
+    color: $dark
+    text-decoration: none
+
+.event
+  border-radius: 10px
+  overflow: hidden
+  background-color: #fff
+  margin-bottom: 40px
+  &:nth-of-type(n+4)
+    display: none
+    &.active
+      display: block
+  &__img-box
+    height: 62px
+    background-color: #efefef
+  &__img
+    object-fit: cover
+    height: 100%
+    width: 100%
+  &__text-box
+    padding: 15px 30px 25px
+  &__title
+    font-family: $P
+    font-weight: 700
+    font-size: em(22px)
+    line-height: 1.5
+    margin: 0 0 em(2px)
+    color: #000000
+  &__date
+    font-weight: 400
+    color: #000000
+    line-height: 1.5
+    margin: 0 0 em(20px)
+  &__description
+    font-size: em(14px)
+    line-height: 1.5
+    margin: 0 0 em(24px)
+    height: 132px
+    overflow: hidden
+  &__btn
+
+.faq
+  padding: 40px 0 77px
+  &__title
+    text-align: center
+    margin: 0 0 1.75em
+    font-weight: 500
+.questions
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 100px
+
+  &__url
+    display: block
+    text-decoration: none
+    transition: ease-in .3s all
+    position: relative
+    padding-left: 40px
+    cursor: pointer
+    font-weight: 600
+    &::before
+      content: ''
+      position: absolute
+      background-image: url(../img/plus.svg)
+      background-size: cover
+      display: block
+      left: 0
+      top: 0
+      transform: translateY(-0)
+      width: 24px
+      height: 24px
+  &__box
+    position: relative
+    &.active
+      .questions__answer
+        display: block
+      .questions__url::before
+        background-image: url(../img/minus.svg)
+  &__answer
+    background-color: #fff
+    display: none
+    font-size: em(14px)
+    padding: em(22px) em(42px)
+    margin: em(22px) 0 0
+    border-radius: 10px
+    position: absolute
+    z-index: 1
+  &__box
+    margin-bottom: 23px
+
+.school
+  padding: 40px 0 55px
+  >div
+    grid-template-columns: 1fr 1fr
+.school-box
+  &__title
+
 @import "media" // Всегда в конце
