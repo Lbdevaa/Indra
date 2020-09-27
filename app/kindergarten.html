@@ -89,7 +89,7 @@
 							<a href="/enter.html" class="about__btn main-btn">Как поступить?</a>
 					</div>
 					<div class="about__short">
-						<a href="#order" class="about__btn main-btn main-btn--orange open-popup">Консультация</a>
+						<a href="#order-form" class="about__btn main-btn main-btn--orange open-popup">Консультация</a>
 					</div>
 				</div>
 			</div>
@@ -441,8 +441,35 @@
 			</div>
 		</div>
 	</footer>
-	 
+	<div id="secretary" class="white-popup mfp-hide">
+		<p class="white-popup__text">Всю необходимую информацию Вы можете получить, позвонив секретарю:</p>
+		<a href="tel:8343 347-68-67" class="white-popup__link">Тел: 347-68-67</a>	
+		<a href="tel:8-912-22-42-736" class="white-popup__link">Тел: 8-912-22-42-736 </a>	
+	</div>
+	<form id="order-form" class="white-popup mfp-hide">
+		<p class="white-popup__title">Оставить заявку</p>
+		<input type="text" class="white-popup__input" placeholder="ФИО" name="name">
+		<input type="tel" class="white-popup__input" placeholder="Телефон" name="phone">
+		<button type="submit" class="white-popup__btn main-btn">Оставить заявку</button>
+		<p class="white-popup__description">Нажимая на кнопку, я соглашаюсь с <a href="#" class="white-popup__url">политикой обработки</a> своих персональных данных.</p>
+	</form>
+	
 	<script src="js/scripts.min.js"></script>
-
+	<script>
+		var thisPageTitle = encodeURI('Главная');
+      
+		$('#order-form').on('submit', function(){
+			$.ajax({ 
+				type: "POST",
+				url: "assets/order.php",
+				data: $(this).serialize() + '&thisPageTitle=' + thisPageTitle
+			}); 
+			$(this).find("input").val("");
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+			$("#order-form").trigger("reset"); 
+			$.magnificPopup.close();
+			return false;
+		}); 
+	</script>
 </body>
 </html>
