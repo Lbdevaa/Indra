@@ -4,15 +4,20 @@ $(function () {
     e.preventDefault();
     $(this).toggleClass("active");
     $(".event:nth-of-type(n+4)").toggleClass("active");
+    $("html, body").animate(
+      { scrollTop: $($(this).attr("href")).offset().top },
+      2000
+    );
   });
+
   // faq accordion
   let questions = document.querySelectorAll(".questions__box");
   let i;
 
   for (i = 0; i < questions.length; i++) {
-    questions[i].onclick = function (questions) {
-      this.classList.toggle("active");
-    };
+    questions[i].children[0].addEventListener("click", function (questions) {
+      this.parentElement.classList.toggle("active");
+    });
   }
   // teacher slider
   var swiperProduct = new Swiper(".slider-teacher", {
@@ -45,6 +50,18 @@ $(function () {
     midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
 
+  //teachers page sort
+  $(".teachers-page__sort-btn").click(function () {
+    $(".teachers-page__list").removeClass("active");
+    $(".teachers-page__sort-btn").removeClass("active");
+    $(this).addClass("active");
+  });
+  $(".teachers-page__sort-btn--school").click(function () {
+    $(".teachers-page__list--school").addClass("active");
+  });
+  $(".teachers-page__sort-btn--kindergarten").click(function () {
+    $(".teachers-page__list--kindergarten").addClass("active");
+  });
   // fancy product open img
   // $(".single-news__img-box").fancybox();
 

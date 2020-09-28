@@ -5,6 +5,8 @@
 @import "icons"
 
 // Пользовательские стили
+html
+  scroll-behavior: smooth
 .main-btn
   font-size: em(16px)
   color: #ffffff
@@ -418,7 +420,7 @@
     grid-column: 1/3
   &__title
     display: inline-block
-    margin-right: 40px
+    margin-right: 32px
   &__sort
     display: inline-block
   &__sort-btn
@@ -438,6 +440,12 @@
       background: $greenGrad
   &__pagination
     grid-column: 1/3
+  &__link
+    vertical-align: middle
+    i
+      margin-right: em(6px)
+      font-size: em(20px)
+      vertical-align: text-top
 
 .news-big
   grid-template-columns: max-content 1fr
@@ -480,6 +488,18 @@
     line-height: 1.75
     font-weight: 600
     align-self: end
+    position: relative
+    max-width: max-content
+    padding-right: 20px
+    &::after
+      content: ''
+      position: absolute
+      width: 7px
+      height: 14px
+      background: url('../img/arrow-right-orange.svg') no-repeat center center
+      right: 0
+      top: 50%
+      transform: translate(0%, -50%)
 
 .news-small
   grid-column: 1/3
@@ -513,6 +533,18 @@
     font-weight: 600
     align-self: center
     margin-right: 25px
+    position: relative
+    max-width: max-content
+    padding-right: 20px
+    &::after
+      content: ''
+      position: absolute
+      width: 7px
+      height: 14px
+      background: url('../img/arrow-right-orange.svg') no-repeat center center
+      right: 0
+      top: 50%
+      transform: translate(0%, -50%)
 .news-arrow
   margin-left: 12px
 .pagination
@@ -668,37 +700,46 @@
   &__title
     margin-bottom: em(20px)
     line-height: 1.4
-  &__btn
-
   &__header
     display: flex
     align-items: center
     justify-content: space-between
 
+.teachers-page
+  padding: 42px 50px
+  &__title
+    margin: 0 em(20px) em(20px) 0
+    line-height: 1.4
+    display: inline-block
+  &__header
+  &__list
+    grid-template-columns: repeat(4, 1fr)
+    display: none
+    &.active
+      display: grid
+  &__sort
+    display: inline-block
+  &__sort-btn
+    padding: em(7px) em(25px)
+    display: inline-block
+    margin-right: em(15px)
+    background: #F8F9FD
+    color: $dark
+    transition: .3s ease-in all
+    &:last-child
+      margin: 0
+    &.active
+      color: #ffffff
+      background: $greenGrad
+    &:hover
+      color: #ffffff
+      background: $greenGrad
+
 .slider-teacher
   margin: auto
   // max-width: 1115px
+  max-width: 1250px
   padding: 0 20px
-  &__card
-    max-width: 253px
-  &__img-box
-    height: 266px
-    max-width: 253px
-    border-radius: 10px
-    overflow: hidden
-    margin-bottom: 30px
-    background: #e3e3e3
-  &__img
-    object-fit: cover
-  &__name
-    font-family: $P
-    font-weight: 700
-    font-size: em(20px)
-    line-height: 1.2
-    margin: 0
-  &__info
-    font-size: em(14px)
-    margin: em(12px) 0 em(38px)
   &__wrap
     margin: auto
     max-width: 1070px
@@ -740,6 +781,27 @@
       &:after
         background: url('../img/arrow-right-circle.svg')
 
+.teacher-card
+  max-width: 253px
+  &__img-box
+    height: 266px
+    max-width: 253px
+    border-radius: 10px
+    overflow: hidden
+    margin-bottom: 30px
+    background: #e3e3e3
+  &__img
+    object-fit: cover
+  &__name
+    font-family: $P
+    font-weight: 700
+    font-size: em(20px)
+    line-height: 1.2
+    margin: 0
+  &__info
+    font-size: em(14px)
+    margin: em(12px) 0 em(38px)
+
 .events
   padding: 60px 50px
   >div
@@ -755,16 +817,27 @@
     grid-column: 1/4
     color: $dark
     text-decoration: none
-
+    position: relative
+    &::after
+      position: absolute
+      content: ''
+      background: url('../img/arrow-down-black.svg') no-repeat center center
+      width: 10px
+      height: 20px
+      right: -20px
+      transition: .3s ease-in all
+    &.active
+      &::after
+        transform: rotate(180deg) translateY(-20%)
 .event
   border-radius: 10px
-  overflow: hidden
   background-color: #fff
   margin-bottom: 40px
+  box-shadow: 20px 20px 35px rgba(143, 146, 158, 0.1)
   &:nth-of-type(n+4)
     display: none
     &.active
-      display: block
+      display: grid
   &__img-box
     height: 62px
     background-color: #efefef
@@ -803,7 +876,6 @@
 .questions
   grid-template-columns: 1fr 1fr
   grid-column-gap: 100px
-
   &__url
     display: block
     text-decoration: none
@@ -916,4 +988,9 @@
   >div
   &__title
 
+.intelligence
+  padding: 40px 0 55px
+  &__link
+    display: block
+    margin: 0 0 em(20px)
 @import "media" // Всегда в конце
