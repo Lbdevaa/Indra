@@ -421,10 +421,12 @@ html
     display: inline-block
     margin-right: 32px
   &__wrap
-    display: none
+    display: grid
+    grid-gap: 20px
+    &--school, &--kindergarden
+      display: none
     &.active
       display: grid
-      grid-gap: 20px
   &__sort
     display: inline-block
   &__sort-btn
@@ -978,6 +980,7 @@ html
     text-transform: none
     border: none
     margin: 0 auto
+    cursor: pointer
   &__description
     font-size: .875em
     line-height: 1.2
