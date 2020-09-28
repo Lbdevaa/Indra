@@ -6,7 +6,7 @@
 
 // Пользовательские стили
 html
-  scroll-behavior: smooth
+  // scroll-behavior: smooth 
 .main-btn
   font-size: em(16px)
   color: #ffffff
@@ -414,13 +414,17 @@ html
 .news
   padding: 40px 0
   >div
-    grid-template-columns: 1fr 1fr
-    grid-gap: 20px
+    // grid-template-columns: 1fr 1fr
+    // grid-gap: 20px
   &__header
-    grid-column: 1/3
   &__title
     display: inline-block
     margin-right: 32px
+  &__wrap
+    display: none
+    &.active
+      display: grid
+      grid-gap: 20px
   &__sort
     display: inline-block
   &__sort-btn
@@ -640,7 +644,7 @@ html
     margin-bottom: 10px
     border-radius: 10px
   &__img-box-nav
-    max-width: 110px
+    max-width: 96px
     width: 100%
     background-color: #fff
     transition: all .3s ease
@@ -706,7 +710,7 @@ html
     justify-content: space-between
 
 .teachers-page
-  padding: 42px 50px
+  padding: 0 0 50px
   &__title
     margin: 0 em(20px) em(20px) 0
     line-height: 1.4
@@ -714,6 +718,7 @@ html
   &__header
   &__list
     grid-template-columns: repeat(4, 1fr)
+    grid-gap: 10px
     display: none
     &.active
       display: grid
@@ -993,4 +998,8 @@ html
   &__link
     display: block
     margin: 0 0 em(20px)
+
+.quality
+  padding: 40px 0 55px
+  &__title
 @import "media" // Всегда в конце

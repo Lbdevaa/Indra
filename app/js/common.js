@@ -49,9 +49,23 @@ $(function () {
     type: "inline",
     midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
+  //news page sort
+  $(".news__sort-btn").click(function (e) {
+    e.preventDefault();
+    $(".news__wrap").removeClass("active");
+    $(".news__sort-btn").removeClass("active");
+    $(this).addClass("active");
+  });
+  $(".news__sort-btn--school").click(function () {
+    $(".news__wrap--school").addClass("active");
+  });
+  $(".news__sort-btn--kindergarten").click(function () {
+    $(".news__wrap--kindergarten").addClass("active");
+  });
 
   //teachers page sort
-  $(".teachers-page__sort-btn").click(function () {
+  $(".teachers-page__sort-btn").click(function (e) {
+    e.preventDefault();
     $(".teachers-page__list").removeClass("active");
     $(".teachers-page__sort-btn").removeClass("active");
     $(this).addClass("active");
