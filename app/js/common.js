@@ -25,7 +25,8 @@ $(function () {
     spaceBetween: 20,
     // width: 1000,
     // slidesPerView: "auto",
-    slidesPerView: 4,
+    slidesOffsetBefore: -20,
+    slidesPerView: 2,
     pagination: {
       el: ".slider-teacher__pag",
       type: "progressbar",
@@ -34,14 +35,14 @@ $(function () {
       nextEl: ".slider-teacher__next",
       prevEl: ".slider-teacher__prev",
     },
-    // breakpoints: {
-    //   // when window width is >= 480px
-    //   980: {
-    //     spaceBetween: 30,
-    //     slidesOffsetBefore: 30,
-    //     width: 1125,
-    //   },
-    // },
+    breakpoints: {
+      // when window width is >= 980px
+      980: {
+        // spaceBetween: 30,
+        // slidesOffsetBefore: 70,
+        width: 1125,
+      },
+    },
   });
 
   // popup
@@ -76,6 +77,19 @@ $(function () {
   $(".teachers-page__sort-btn--kindergarten").click(function () {
     $(".teachers-page__list--kindergarten").addClass("active");
   });
+
+  //burger
+  $(".burger-menu").click(function () {
+    $(this).toggleClass("active");
+    $(".nav").toggleClass("active");
+  });
+  // footer
+  $(".footer__more-btn").click(function (e) {
+    e.preventDefault();
+    $(this).addClass("active");
+    $(".footer__links:nth-of-type(n+2)").addClass("active");
+  });
+
   // fancy product open img
   // $(".single-news__img-box").fancybox();
 

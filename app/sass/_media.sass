@@ -23,6 +23,268 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+	.main-btn
+		font-size: em(14px)
+
+	.section-title
+		// font-size: em(24px)
+		font-size: em(21px)
+
+	.header
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		grid-row-gap: 20px
+		grid-column-gap: 10px
+		font-size: em(14px)
+		justify-items: center
+
+	.nav
+		grid-column: 1/5
+		grid-template-columns: 1fr
+		justify-self: start
+		grid-row-gap: 15px
+		display: none
+		text-align: center
+		margin: auto
+		&.active
+			display: grid
+		&__item
+			margin: auto
+	.eye
+		grid-row: 1
+		grid-column: 4/5
+		justify-self: end
+
+	.burger-menu
+		display: block
+		grid-row: 1
+		grid-column: 2/4
+		text-align: center
+		color: $orange
+		&.active
+			text-decoration: underline
+
+	.geo-box
+		grid-column: 1/3
+	.phone-box
+		grid-column: 3/6
+
+	.breadcrumbs
+		padding: 30px 0 20px
+		font-size: em(14px)
+
+	.banner
+		padding: 20px 0 50px
+		&__info
+			grid-template-columns: 1fr
+			grid-gap: 20px
+		&__title
+			font-size: em(30px)
+		&__subtitle
+			margin-bottom: em(20px)
+		&__btn
+			margin: 0 em(20px) em(20px) 0
+		&__text-info
+			// max-width: 200px
+		&__social
+			grid-template-columns: repeat(3, 1fr)
+			grid-gap: 20px
+			bottom: 0
+			top: auto
+			left: 50%
+			height: auto
+			z-index: 11
+			transform: translateX(-50%)
+			&::after, &::before
+				display: none
+		&__social-link
+			i
+				font-size: em(24px)
+		&__img
+			max-width: 30%
+		&__under
+			width: 90%
+			padding: 20px 10px
+			margin: 0 auto
+			// bottom: -180px
+			position: relative
+
+	.under-list
+		grid-template-columns: 1fr 1fr
+		grid-column-gap: 10px
+		&__text
+			font-size: em(13px)
+	.categories
+		padding: 30px 0
+		>div
+			grid-template-columns: 1fr
+		&__title
+			grid-column: 1/2
+		&--main-page
+			margin-bottom: 20px
+
+	.category
+		grid-template-columns: 1fr
+		&__img-box
+			max-width: 100%
+			width: 100%
+			height: 200px
+
+	.about
+		>div
+			grid-template-columns: 1fr
+		&__title
+			grid-column: 1/2
+		&__img-box
+			margin-bottom: 40px
+		&__short
+			margin: 0
+			display: inline-block
+			max-width: 48%
+			margin-right: 1%
+			&-num
+				font-size: em(44px)
+			&-text
+				font-size: em(12px)
+		&--main-page
+			margin-bottom: 0
+		&--kindergarten
+			padding: 50px 0 30px
+		&__text-box
+			margin-bottom: 40px
+
+	.footer
+		padding: 30px 0
+		>.container
+			grid-template-columns: 1fr
+			margin-bottom: 30px
+		&__info
+			position: relative
+			right: auto
+			top: auto
+			padding: 0 20px
+			display: grid
+			grid-template-columns: max-content 1fr
+			grid-gap: 30px 10px
+			align-items: end
+			justify-items: self-end
+			margin-bottom: 30px
+		&__logo-box
+			margin: 0
+			justify-self: start
+		&__tel
+			font-size: em(16px)
+			margin: 0
+			width: max-content
+		&__address
+			text-align: unset
+			grid-column: 1/3
+			max-width: max-content
+			margin: 0
+		&__links
+			&:nth-child(n+2)
+				display: none
+				&.active
+					display: block
+		&__more-btn
+			display: block
+			text-align: center
+			&.active
+				display: none
+
+	.program
+		padding: 30px 0
+		>div
+			grid-template-columns: 1fr
+		&__title, &__subtitle
+			grid-column: 1/2
+
+	.teachers
+		padding: 30px 0
+		&__header
+			display: block
+		&__btn
+			margin: 0 0 em(40px)
+
+	.teachers-page
+		padding: 0 0 20px
+		&__header
+			margin-bottom: 20px
+		&__list
+			grid-template-columns: 1fr 1fr
+
+	.teacher-card
+		&__img-box
+			height: 200px
+		&__info
+			margin: em(10px) 0 em(20px)
+
+	.events
+		padding: 30px 0
+		>div
+			grid-template-columns: 1fr
+		&__title
+			grid-column: 1/2
+		&__more-btn
+			grid-column: 1/2
+
+	.event
+		&__description
+			height: auto
+		&__text-box
+			display: block
+		&__btn
+			margin: 0 auto
+	.slider-teacher
+		&__next, &__prev
+			top: 60%
+
+	.news
+		padding: 30px 0
+		&__wrap
+			grid-template-columns: 1fr
+		&__header
+			margin: 0 0 20px
+		&__sort
+			display: block
+	.news-big
+		grid-template-columns: 1fr
+		&__img-box
+			width: 100%
+			height: 150px
+			// width: 50px
+	.news-small
+		grid-column: 1/2
+		grid-template-columns: 1fr
+		&__img-box
+			width: 100%
+		&__link
+			margin: 20px
+	.single-news
+		margin-bottom: 40px
+		&__inner
+			grid-template-columns: 1fr
+		&__wrap
+			margin-bottom: 20px
+	.faq
+		padding: 40px 0
+	.questions
+		grid-template-columns: 1fr
+	.list
+		&__item
+			font-size: em(12px)
+	.school
+		>div
+			grid-template-columns: 1fr
+
+	.school-box
+		padding: 30px 12px
+		&:nth-child(3)
+			grid-column: 1/2
+			.school-box__btns
+				grid-column: 1/3
+		&__btn
+			padding: em(12px) em(20px)
+
 	/**/
 
 /* Small Devices, Tablets */
