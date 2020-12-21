@@ -35,6 +35,8 @@ gulp.task("js", function () {
         "app/libs/swiper/swiper.min.js",
         "app/libs/magnific-popup/jquery.magnific-popup.min.js",
         "app/libs/fancybox/jquery.fancybox.min.js",
+        "app/libs/slick/slick.min.js", 
+        'app/libs/OwlCarousel2/owl.carousel.min.js',
         "app/js/common.js", // Always at the end
       ])
       .pipe(concat("scripts.min.js"))

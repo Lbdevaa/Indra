@@ -7,8 +7,7 @@
 	.nav
 		grid-column-gap: 20px
 @media only screen and (max-width : 1300px)
-	.header__logo-box
-		max-width: 80px
+
 	.header
 		grid-column-gap: 20px
 		font-size: em(13px)
@@ -19,14 +18,18 @@
 @media only screen and (max-width : 1200px)
 	.header
 		padding: 18px
+	.banner__social
+		left: 20px
 	/**/
-
+@media only screen and (max-width : 1050px)
+	.header__logo-box
+		max-width: 80px
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	.main-btn
 		font-size: em(14px)
 
-	.section-title
+	.section-title, h1, h2
 		// font-size: em(24px)
 		font-size: em(21px)
 
@@ -88,7 +91,7 @@
 		&__social
 			grid-template-columns: repeat(3, 1fr)
 			grid-gap: 20px
-			bottom: 0
+			bottom: -20px
 			top: auto
 			left: 50%
 			height: auto
@@ -128,7 +131,8 @@
 			max-width: 100%
 			width: 100%
 			height: 200px
-
+		&__text
+			min-height: auto
 	.about
 		>div
 			grid-template-columns: 1fr
@@ -136,6 +140,7 @@
 			grid-column: 1/2
 		&__img-box
 			margin-bottom: 40px
+			width: 100%
 		&__short
 			margin: 0
 			display: inline-block
@@ -151,7 +156,8 @@
 			padding: 50px 0 30px
 		&__text-box
 			margin-bottom: 40px
-
+		&__text
+			margin: 0 0 15px
 	.footer
 		padding: 30px 0
 		>.container
@@ -171,9 +177,11 @@
 		&__logo-box
 			margin: 0
 			justify-self: start
-		&__tel
+			width: 145px
+		&__tel, &__email
 			font-size: em(16px)
 			margin: 0
+			grid-column: 2
 			width: max-content
 		&__address
 			text-align: unset
@@ -270,21 +278,53 @@
 	.questions
 		grid-template-columns: 1fr
 	.list
+		padding-left: 30px
+		&--3
+			grid-column: 1
+			grid-template-columns: 1fr
+		&--2
+			grid-template-columns: 1fr
 		&__item
 			font-size: em(12px)
+			&::before
+				width: 20px
+				height: 20px
+				top: -5px
+				left: -30px
 	.school
 		>div
 			grid-template-columns: 1fr
 
 	.school-box
 		padding: 30px 12px
+		display: block
 		&:nth-child(3)
 			grid-column: 1/2
 			.school-box__btns
 				grid-column: 1/3
 		&__btn
 			padding: em(12px) em(20px)
-
+	.main
+		&__text-box
+			overflow-x: scroll
+		table
+			width: 320px
+			li
+				font-size: em(12px)
+	.eye-box
+		grid-row: 1
+		grid-column: 4
+	.teacher
+		.container
+			grid-template-columns: 1fr
+		&__header
+			grid-column: 1/2
+		&__img-box
+			margin: 0 auto
+			max-height: 60vh
+			object-fit: contain
+		&__text-box
+			font-size: em(12px)
 	/**/
 
 /* Small Devices, Tablets */

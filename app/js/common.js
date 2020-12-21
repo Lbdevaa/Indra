@@ -23,9 +23,10 @@ $(function () {
   var swiperProduct = new Swiper(".slider-teacher", {
     // slidesOffsetAfter: 20,
     spaceBetween: 20,
+    loop: true,
     // width: 1000,
     // slidesPerView: "auto",
-    slidesOffsetBefore: -20,
+    // slidesOffsetBefore: -20,
     slidesPerView: 2,
     pagination: {
       el: ".slider-teacher__pag",
@@ -40,6 +41,7 @@ $(function () {
       980: {
         // spaceBetween: 30,
         // slidesOffsetBefore: 70,
+        slidesPerView: 4,
         width: 1125,
       },
     },
@@ -50,19 +52,20 @@ $(function () {
     type: "inline",
     midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
+
   //news page sort
-  $(".news__sort-btn").click(function (e) {
-    e.preventDefault();
-    $(".news__wrap").removeClass("active");
-    $(".news__sort-btn").removeClass("active");
-    $(this).addClass("active");
-  });
-  $(".news__sort-btn--school").click(function () {
-    $(".news__wrap--school").addClass("active");
-  });
-  $(".news__sort-btn--kindergarten").click(function () {
-    $(".news__wrap--kindergarten").addClass("active");
-  });
+  // $(".news__sort-btn").click(function (e) {
+  //   e.preventDefault();
+  //   $(".news__wrap").removeClass("active");
+  //   $(".news__sort-btn").removeClass("active");
+  //   $(this).addClass("active");
+  // });
+  // $(".news__sort-btn--school").click(function () {
+  //   $(".news__wrap--school").addClass("active");
+  // });
+  // $(".news__sort-btn--kindergarten").click(function () {
+  //   $(".news__wrap--kindergarten").addClass("active");
+  // });
 
   //teachers page sort
   $(".teachers-page__sort-btn").click(function (e) {
@@ -83,11 +86,19 @@ $(function () {
     $(this).toggleClass("active");
     $(".nav").toggleClass("active");
   });
+
   // footer
   $(".footer__more-btn").click(function (e) {
     e.preventDefault();
     $(this).addClass("active");
     $(".footer__links:nth-of-type(n+2)").addClass("active");
+  });
+
+  // eye version
+  $(".eye").click(function (e) {
+    e.preventDefault();
+    $(this).toggleClass("active");
+    $("body").toggleClass("big-eye");
   });
 
   // fancy product open img
@@ -131,4 +142,70 @@ $(function () {
   //   $('.single-news__card-slider-big').slick('refresh')
   //   $('.single-news__card-slider-nav').slick('refresh')
   // })
+
+  //галерея фото 
+  $().fancybox({
+    selector: '[data-fancybox="popin-img"]',
+    thumbs: false,
+    hash: false,
+    infobar : false,
+  }); 
+   
+  $('.gallery-slider__carousel').slick({
+    dots: true, 
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      } 
+    ]
+  });
+
+  //gallery
+  $('.video-carousel').owlCarousel({
+    items:1,
+    merge:true,
+    loop:true,
+    margin: 20,
+    video:true,
+    // lazyLoad:true,
+    center:true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true, 
+    dots: true,
+    nav: true,
+    responsive:{
+        480:{
+            items:2
+        },
+        600:{
+            items:4
+        }
+    }
+});
+   
+   
 });
