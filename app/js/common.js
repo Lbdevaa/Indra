@@ -19,6 +19,7 @@ $(function () {
       this.parentElement.classList.toggle("active");
     });
   }
+
   // teacher slider
   var swiperProduct = new Swiper(".slider-teacher", {
     spaceBetween: 20,
@@ -128,7 +129,6 @@ $(function () {
     loop: true,
     margin: 20,
     video: true,
-    // lazyLoad:true,
     center: true,
     autoplay: true,
     autoplayTimeout: 5000,
@@ -144,7 +144,6 @@ $(function () {
       }
     }
   });
-
   //banner link
   $('.banner__social-link').click(function () {
     $(this).toggleClass("active");
